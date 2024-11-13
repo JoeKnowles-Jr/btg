@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.boxes.BoxesFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:layout_marginEnd="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/strict" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:textAlignment="center"
+            android:layout_width="30dp"
+            android:hint="@string/l"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_box_search_l" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:textAlignment="center"
+            android:layout_width="30dp"
+            android:hint="@string/w"
+            android:layout_margin="15dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_box_search_w" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:textAlignment="center"
+            android:layout_width="30dp"
+            android:hint="@string/h"
+            android:layout_height="wrap_content"
+            android:id="@+id/et_box_search_h" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_height="wrap_content"
+            android:padding="1dp"
+            android:text="@string/reset"
+            android:id="@+id/btn_boxes_reset" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_boxes"
+        android:layout_margin="7dp"
+        android:padding="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

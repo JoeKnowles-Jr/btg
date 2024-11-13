@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textAlignment="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        tools:text="2000"
+        android:id="@+id/tv_box_view_sku" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textAlignment="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        tools:text="4 x 4 x 4"
+        android:id="@+id/tv_box_view_dimens" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textAlignment="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        tools:text="25"
+        android:id="@+id/tv_box_view_bundle_size" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:textAlignment="center"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        tools:text="$0.74"
+        android:id="@+id/tv_box_view_price" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

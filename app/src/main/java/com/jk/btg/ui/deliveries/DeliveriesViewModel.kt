@@ -1,13 +1,13 @@
-package com.jk.btg.ui.slideshow
+package com.jk.btg.ui.deliveries
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SlideshowViewModel : ViewModel() {
+class DeliveriesViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is slideshow Fragment"
+        value = "This is home Fragment"
     }
     val text: LiveData<String> = _text
 }

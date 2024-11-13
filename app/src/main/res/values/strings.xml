@@ -7,7 +7,12 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_boxes">Boxes</string>
+    <string name="menu_deliveries">Deliveries</string>
+    <string name="menu_customers">Customers</string>
+    <string name="l">L</string>
+    <string name="w">W</string>
+    <string name="h">H</string>
+    <string name="strict">Strict</string>
+    <string name="reset">Reset</string>
 </resources>
