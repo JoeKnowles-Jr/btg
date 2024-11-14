@@ -115,7 +115,7 @@ class BoxAdapter : ListAdapter<Box, BoxAdapter.BoxViewHolder>(BoxViewHolder.BoxC
             val price500 = format.format(box?.price500).toString()
             val priceData = arrayOf(priceRetail, priceBundle, price100, price250, price500)
             val adapter = ArrayAdapter<String>(itemView.context, R.layout.layout_price_view, priceData)
-            rvPrice.adapter = adapter
+//            rvPrice.adapter = adapter
         }
 
         companion object {
