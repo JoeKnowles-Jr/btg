@@ -22,7 +22,7 @@ class Network {
 
 
     fun getProducts(handler: TextHttpResponseHandler?) {
-        AsyncHttpClient().get(PRODUCTS_URL, handler)
+        AsyncHttpClient().get("$PRODUCTS_URL/android", handler)
     }
 
     fun getCustomers(handler: TextHttpResponseHandler?) {

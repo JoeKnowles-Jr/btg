@@ -1,5 +1,8 @@
 package com.jk.btg.data.model.products
 
+import com.google.gson.annotations.JsonAdapter
+import com.jk.btg.data.BooleanJsonDeserializer
+
 data class Box(
     val l: Float,
     val w: Float,
@@ -15,6 +18,7 @@ data class Box(
     val flatL: Float,
     val flatW: Float,
     val flatH: Float,
+    @JsonAdapter(value = BooleanJsonDeserializer::class)
     val folds: Boolean = false,
     val foldedL: Float = 0.0f,
     val foldedW: Float = 0.0f,
