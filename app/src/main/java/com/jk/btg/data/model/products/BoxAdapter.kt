@@ -19,9 +19,7 @@ import java.time.format.FormatStyle
 import java.util.*
 
 class BoxAdapter : ListAdapter<Box, BoxAdapter.BoxViewHolder>(BoxViewHolder.BoxComparator()) {
-    companion object {
-        private var alternate = false
-    }
+
     private lateinit var mListener: BoxClickListener
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoxViewHolder {
@@ -114,7 +112,7 @@ class BoxAdapter : ListAdapter<Box, BoxAdapter.BoxViewHolder>(BoxViewHolder.BoxC
             val price250 = format.format(box?.price250).toString()
             val price500 = format.format(box?.price500).toString()
             val priceData = arrayOf(priceRetail, priceBundle, price100, price250, price500)
-            val adapter = ArrayAdapter<String>(itemView.context, R.layout.layout_price_view, priceData)
+            val adapter = ArrayAdapter(itemView.context, R.layout.layout_price_view, priceData)
 //            rvPrice.adapter = adapter
         }
 
