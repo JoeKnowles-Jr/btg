@@ -16,6 +16,8 @@ class BoxesFragment : Fragment(), BoxClickListener {
 
     private var _binding: FragmentBoxesBinding? = null
 
+    private var price_index = 0;
+
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
@@ -42,6 +44,19 @@ class BoxesFragment : Fragment(), BoxClickListener {
         viewModel.boxList.observe(viewLifecycleOwner) {
             boxAdapter.submitList(it)
         }
+
+        binding.btnPriceUp.setOnClickListener {
+            price_index = ((binding.rvBoxes.adapter) as BoxAdapter).priceUp()
+            decorateButtons()
+        }
+
+        binding.btnPriceDown.setOnClickListener {
+            price_index = ((binding.rvBoxes.adapter) as BoxAdapter).priceDown()
+        }
+    }
+
+    private fun decorateButtons() {
+        binding
     }
 
     override fun onDestroyView() {
@@ -55,5 +70,9 @@ class BoxesFragment : Fragment(), BoxClickListener {
 
     override fun onBoxLongClick(box: Box) {
 
+    }
+
+    companion object {
+        private val INDICATORS = arrayOf("[", "Retail", "Bundle", "Price 100", "Price 250", "Price 500")
     }
 }

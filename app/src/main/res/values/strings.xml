@@ -16,4 +16,6 @@
     <string name="strict">Strict</string>
     <string name="reset">Reset</string>
     <string name="x">x</string>
+    <string name="left_chevrons"><![CDATA[<<<]]></string>
+    <string name="right_chevrons"><![CDATA[>>>]]></string>
 </resources>

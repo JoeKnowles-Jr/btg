@@ -18,11 +18,28 @@ import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle
 import java.util.*
 
+@SuppressLint("NotifyDataSetChanged")
 class BoxAdapter : ListAdapter<Box, BoxAdapter.BoxViewHolder>(BoxViewHolder.BoxComparator()) {
     companion object {
-        private var alternate = false
+        private var price_index = 0
     }
     private lateinit var mListener: BoxClickListener
+
+    fun priceUp(): Int {
+        --price_index
+        if (price_index < 0)
+            price_index = 0
+        notifyDataSetChanged()
+        return price_index
+    }
+
+    fun priceDown(): Int {
+        ++price_index
+        if (price_index > 4)
+            price_index = 4
+        notifyDataSetChanged()
+        return price_index
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoxViewHolder {
         return BoxViewHolder.create(parent, mListener)
@@ -31,6 +48,7 @@ class BoxAdapter : ListAdapter<Box, BoxAdapter.BoxViewHolder>(BoxViewHolder.BoxC
     override fun onBindViewHolder(holder: BoxViewHolder, position: Int) {
         val current = getItem(position)
         holder.bind(current)
+        holder.displayPrice(price_index)
         if (position % 2 == 1)
             holder.shadeBackground(true)
         else
@@ -46,8 +64,11 @@ class BoxAdapter : ListAdapter<Box, BoxAdapter.BoxViewHolder>(BoxViewHolder.BoxC
         private val dimensH: TextView = itemView.findViewById(R.id.tv_box_view_h)
         private val bundle: TextView = itemView.findViewById(R.id.tv_box_view_bundle_size)
         private val price: TextView = itemView.findViewById(R.id.tv_box_view_price)
-        private val rvPrice: RecyclerView = itemView.findViewById(R.id.rv_prices)
+        private val tvPrice: PriceTextView = itemView.findViewById(R.id.tv_box_view_price)
 
+        fun displayPrice(which: Int) {
+            tvPrice.changePriceIndex(which)
+        }
 
         private var dateFormatter: DateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT)
             .withLocale(Locale.US)
@@ -113,9 +134,9 @@ class BoxAdapter : ListAdapter<Box, BoxAdapter.BoxViewHolder>(BoxViewHolder.BoxC
             val price100 = format.format(box?.price100).toString()
             val price250 = format.format(box?.price250).toString()
             val price500 = format.format(box?.price500).toString()
-            val priceData = arrayOf(priceRetail, priceBundle, price100, price250, price500)
-            val adapter = ArrayAdapter<String>(itemView.context, R.layout.layout_price_view, priceData)
-//            rvPrice.adapter = adapter
+
+            tvPrice.setPrices(arrayOf(priceRetail, priceBundle, price100, price250, price500))
+
         }
 
         companion object {

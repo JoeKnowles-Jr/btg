@@ -78,14 +78,7 @@
         tools:text="25"
         android:id="@+id/tv_box_view_bundle_size" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/rv_prices" />
-
-    <androidx.appcompat.widget.AppCompatTextView
+    <com.jk.btg.data.model.products.PriceTextView
         android:textAlignment="textEnd"
         android:textSize="17sp"
         android:layout_weight="3"
